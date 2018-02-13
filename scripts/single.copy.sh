@@ -10,9 +10,11 @@ dir=$3
 for i in *.faa ; do
         FILE=$i; TAXA=$(grep -c '>' $i);
         echo "$FILE     $TAXA"; done > tmp
-perl -e '($tmp,$n)=@ARGV; open(ARCH, $tmp); while(<ARCH>){chomp; @c=split(/\t/);if($c[1] == $n){print "$c[0]\t$c[1]\n";}}' $tmp $ta
-xa > list.single
+        awk '{print $1"\t"$3}' tmp > tmp.2
+perl -e '($tmp,$n)=@ARGV; open(ARCH, $tmp); while(<ARCH>){chomp; @c=split(/\t/);if($c[1]=$n){print "$c[0]\n";}}' tmp.2 $taxa > list
+.single
 
+rm tmp*
 mkdir $dir
 
 while read -r line
