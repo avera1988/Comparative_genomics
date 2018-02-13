@@ -26,7 +26,7 @@ This will result in a folder with all core genome genes from analyzed genomes.
 
   -External dependencies 
   
-  enveomics/aai.rb (https://github.com/lmrodriguezr/enveomics) For AAI pair-wise comparisson.
+  enveomics/aai.rb (https://github.com/lmrodriguezr/enveomics) For AAI pairwise comparisson.
   
  -For obtaining single copy orthologous you can use the following bash script.
   
