@@ -16,6 +16,9 @@ Make sure that these programs are installed and are in your system's executable 
 
 Running:
 
+Download Comparative_genomics
+        
+        git clone 
         ./pan_core_matrix.annotated.sh
         usage: ./pan_core_matrix.annotated.sh extention_file num_cpus path_to_comparative_genomics_scripts path_to_get_homologues
    
