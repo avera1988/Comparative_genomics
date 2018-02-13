@@ -25,7 +25,8 @@ for i in *.$term
 done
 for b in *.una ;
         do
-        perl -e 'while(<>){chomp; if($_ =~ /^>/){@header=split(/\_/);}else{$seq=$_; print "$header[0]_$header[1]_$header[5]\n$seq\n";}}' $b > $b.mod
+        perl -e 'while(<>){chomp; if($_ =~ /^>/){@header=split(/\_/);}else{$seq=$_; print "$header[0]_$header[1]_$header[5]\n$seq\n
+";}}' $b > $b.mod
 done
 for i in *.mod
         do
@@ -34,14 +35,14 @@ done
 echo "protein annotation in folder: protein"
 mkdir protein
  cd protein
- for i in ../*.dir ; 
-	do
-	ln -s $i/*.faa . ;
+ for i in ../*.dir ;
+        do
+        ln -s $i/*.faa . ;
 
 done
 for i in *.faa
-	do
-	perl  $scripts/cambia_seqs_unalinea.pl $i > $i.una
+        do
+        perl  $scripts/cambia_seqs_unalinea.pl $i > $i.una
 done
 
 mkdir get_homologues
@@ -49,21 +50,15 @@ cd get_homologues
 dir=$(pwd)
 ln -s ../*una .
 echo "Add tax info to header"
-for i in *scaf.* ; 
-	do 
-	a=$(echo $i|cut -d . -f1); 
-	perl $scripts/c_header.gethomologes.pl $i $a > $a.mod.fasta; 
+for i in *una ;
+        do
+        a=$(echo $i| awk '{split($0, b, "\\.[0-9]"); print b[1]}');
+        mv $i $a.mod.faa;
 done
-rm *scaf*.una
-for i in *una ; 
-	do 
-	a=$(echo $i| awk '{split($0, b, "\.[0-9]"); print b[1]}'); 
-	mv $i $a.mod.faa; 
-done
-for i in *.mod.faa ; 
-	do 
-	a=$(echo $i|awk -F ".mod" '{print $1}'); 
-	perl $scripts/c_header.gethomologes.pl $i $a > $a.mod.fasta ; 
+for i in *.mod.faa ;
+        do
+        a=$(echo $i|awk -F ".mod" '{print $1}');
+        perl $scripts/c_header.gethomologes.pl $i $a > $a.mod.fasta ;
 done
 rm *.mod.faa
 cd ..
@@ -80,6 +75,3 @@ d=$(pwd)
 echo "puting all core genome genes in $d/core"
 $scripts/while_uniq.sh pangenome_matrix_t0__core_list.txt core
 echo "I've finished"
-
-
-
