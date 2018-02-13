@@ -71,7 +71,7 @@ echo "running Get Homologues"
 time get_homologues.pl -d $dir -A -c -t 0 -M -n $cpu
 echo "comparing clusters"
 compare_clusters.pl -o sample_intersection -d get_homologues_homologues/*axa_algOMCL_e0_/ -m
-echo "Obtaning core genome"
+echo "Obtaining core genome"
 parse_pangenome_matrix.pl -m sample_intersection/pangenome_matrix_t0.tab -s
 
 cd sample_intersection
