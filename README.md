@@ -18,7 +18,13 @@ Running:
 
 Download Comparative_genomics
         
-        git clone 
+        git clone https://github.com/avera1988/Comparative_genomics.git
+Make executable all scripts
+
+          cd Comparative_genomics/scripts
+          chmod +x *.*
+Obtaining core and pangenome matrix: 
+
         ./pan_core_matrix.annotated.sh
         usage: ./pan_core_matrix.annotated.sh extention_file num_cpus path_to_comparative_genomics_scripts path_to_get_homologues
    
