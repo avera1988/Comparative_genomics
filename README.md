@@ -16,7 +16,8 @@ Make sure that these programs are installed and are in your system's executable 
 
 Running:
 
-        ./pan_core_matrix.annotated.sh usage: ./pan_core_matrix.annotated.sh extention_file num_cpus path_to_comparative_genomics_scripts path_to_get_homologues
+        ./pan_core_matrix.annotated.sh
+        usage: ./pan_core_matrix.annotated.sh extention_file num_cpus path_to_comparative_genomics_scripts path_to_get_homologues
    
     
 This will result in a folder with all core genome genes from analyzed genomes.
