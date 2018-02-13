@@ -7,7 +7,7 @@ Here you will find some util scripts useful for comparative genomics analysis.
   -Pipeline uses external dependencies:
   
     Prokka (https://github.com/tseemann/prokka). It uses prokka for local gen prediction and annotation.
-    get_homologues (https://github.com/eead-csic-compbio/get_homologues). It uses get_homologues for orthologous obtaining and comparison for getting core and pan-genome matrices.
+    get_homologues (https://github.com/eead-csic-compbio/get_homologues). It uses get_homologues for orthologs obtaining and comparison for getting core and pan-genome matrices.
 
 Make sure that these programs are installed and are in your system's executable search path. To test, in a terminal type:
 
@@ -42,7 +42,7 @@ This will result in a folder with all core genome genes from analyzed genomes.
         ./matrix.sh
         usage: ./matrix.sh list
    
-   For a Heatmap we ca use the following simple R code:
+   For a Heatmap we can use the following simple R code:
    
             library("gplots")
             table <- read.table(file="matrix_aai_core.csv", header=TRUE, sep=",")
