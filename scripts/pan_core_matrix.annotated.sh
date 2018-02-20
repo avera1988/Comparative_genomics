@@ -8,13 +8,14 @@
 #####################################################################################
 
 if [ $# -eq 0 ]; then
-        echo "usage: $0 extention_file num_cpus path_to_comparative_genomics_scripts";
+        echo "usage: $0 extention_file gen_code num_cpus path_to_comparative_genomics_scripts";
         exit 1;
         fi
 
 term=$1
-cpu=$2
-scripts=$3
+g_code=$2
+cpu=$3
+scripts=$4
 mkdir annotation
 echo "annotation"
 cd annotation
@@ -30,7 +31,8 @@ for b in *.una ;
 done
 for i in *.mod
         do
-        prokka --outdir $i.dir --prefix $i --cpu $cpu $i
+        a=$(echo $i|cut -d . -f 1);
+        prokka --outdir $i.dir --prefix $a.dir --cpu --locustag $a $cpu $i
 done
 echo "protein annotation in folder: protein"
 mkdir protein
