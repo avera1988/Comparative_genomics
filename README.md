@@ -26,7 +26,7 @@ Make executable all scripts
 Obtaining core and pangenome matrix: 
 
         ./pan_core_matrix.annotated.sh
-        usage: ./pan_core_matrix.annotated.sh extention_file num_cpus path_to_comparative_genomics_scripts path_to_get_homologues
+        usage: ./pan_core_matrix.annotated.sh extention_file num_cpus path_to_comparative_genomics_scripts
    
     
 This will result in a folder with all core genome genes from analyzed genomes.
