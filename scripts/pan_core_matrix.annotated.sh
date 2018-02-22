@@ -32,7 +32,7 @@ done
 for i in *.mod
         do
         a=$(echo $i|cut -d . -f 1);
-        prokka --outdir $i.dir --prefix $i --cpu $cpu --locustag $a $i
+        prokka --gcode $g_code --outdir $i.dir --prefix $i --cpu $cpu --locustag $a $i
 done
 echo "protein annotation in folder: protein"
 mkdir protein
