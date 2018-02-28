@@ -41,6 +41,10 @@ This will result in a folder with all core genome genes from analyzed genomes.
   
           ./single.copy.sh
           usage: ./single.copy.sh tmp number_of_genomes_used_in_get_homologues output_dir_for_single_copy_genes
+ -To oabtain the single copy orthologs genes for each genome use
+              
+              ./getcore.sh
+              usage: /home/avera/bin/Comparative_genomics/scripts/getcore.sh list
   
   -AAI comparisson: aai.sh
   
