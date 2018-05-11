@@ -6,7 +6,7 @@ if [ $# -eq 0 ]; then
 file=$1
 ls|grep 'GC' > genome_list.txt
 START=1;
-END=$(cat lista_genomas.txt|wc -l);
+END=$(cat genome_list.txt|wc -l);
 for ((c = $START ; c<= $END ; c++))
         do
         var=$(grep 'GC' $file|cut -f2|head -n ${c}|tail -n 1); dos=$(grep 'GC' $file|cut -f1|head -n ${c}|tail -n 1|tr '_' '\t'|cut
