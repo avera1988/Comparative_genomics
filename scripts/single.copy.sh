@@ -11,7 +11,7 @@ for i in *.faa ; do
         FILE=$i; TAXA=$(grep -c '>' $i);
         echo echo -e $FILE'\t'$TAXA; 
         done > tmp
-  perl -e '($tmp,$n)=@ARGV; open(ARCH, $tmp); while(<ARCH>){chomp; @c=split(/\t/);if($c[1]=$n){print "$c[0]\n";}}' tmp $taxa > list.single
+  perl -e '($tmp,$n)=@ARGV; open(ARCH, $tmp); while(<ARCH>){chomp; @c=split(/\t/);if($c[1]==$n){print "$c[0]\n";}}' tmp $taxa > list.single
 
 rm tmp
 mkdir $dir
