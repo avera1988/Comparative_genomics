@@ -11,7 +11,8 @@ echo "obtaining single copy taxa"
 for i in *.faa ;
         do
 
-        FILE=$i; TAXA=$(grep -c '>' $i);
+        FILE=$i; 
+        TAXA=$(grep -c '>' $i);
         echo -e $FILE'\t'$TAXA;
 
 done > tmp
