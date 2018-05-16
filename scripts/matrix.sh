@@ -1,10 +1,11 @@
 #!/bin/bash
 
 if [ $# -eq 0 ]; then
-        echo "usage: $0 list";
+        echo "usage: $0 list cat";
         exit 1;
         fi
 file=$1
+comon=$2
 dir=$(pwd); 
 START=1;
 END=$(cat $file|wc -l);
