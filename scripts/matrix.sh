@@ -38,4 +38,4 @@ for ((c = $START ; c<= $END ; c++));
         cd $dir
 done > matrix.tab
 echo "aai matrix is on:" matrix.tab
-list.sort |awk '{split($0,a,".cat"); print a[1]}' > matrix.names
+cat list.sort |awk '{split($0,a,".cat"); print a[1]}' > matrix.names
