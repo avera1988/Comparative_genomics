@@ -9,7 +9,7 @@ for i in *.faa;
 done
 bash $scripts/mafft.sh mod $cpu 
 cat *.alin > all.core.alin.fasta
-perl merge_seqs.pl all.core.alin.fasta > all.core.alin.fasta.merged
+perl $scripts/merge_seqs.pl all.core.alin.fasta > all.core.alin.fasta.merged
 sed 's/*//g' all.core.alin.fasta.merged > all.core.alin.fasta.merged.sinstar
 mafft --thread $cpu all.core.alin.fasta.merged.sinstar > all.core.alin.fasta.merged.sinstar.alin.end
-Gblocks all.core.alin.fasta.merged.sinstar.alin.end g
+$scripts/Gblocks all.core.alin.fasta.merged.sinstar.alin.end g
